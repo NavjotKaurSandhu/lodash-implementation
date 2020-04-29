@@ -40,4 +40,16 @@ const result = _.flatMap(dataList, ({ a, list }) =>
   _.map(list, tag => ({ a, ...tag }))
 );
 
-console.log("result => ", result);
+console.log(result);
+
+const dataObj = {
+  a: null,
+  b: '12',
+  c: null
+}
+const key = 'b';
+
+// Remove keys which doesn't have data values
+const definedData = _.pickBy(dataObj, _.identity);
+
+console.log(definedData[key]);
